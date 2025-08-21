@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LoginApp.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:LoginApp.ViewModels"
+    xmlns:m="clr-namespace:LoginApp.Models"
+    x:DataType="vm:MainPageVM"
+    IsBusy="{Binding IsBusy}">
+    <VerticalStackLayout
+        Padding="30"
+        Spacing="25"
+        VerticalOptions="Center">
+        <Label
+            FontAttributes="Bold"
+            FontSize="32"
+            HorizontalOptions="Center"
+            Text="{x:Static m:Strings.LoginTitle}"/>
+             
+        <Border
+            Padding="10"
+            Stroke="Olive"
+            StrokeShape="RoundRectangle 8"
+            StrokeThickness="1">
+            <Entry
+                FontSize="18"
+                ClearButtonVisibility="WhileEditing"
+                ReturnType="Next"
+                Placeholder="{x:Static m:Strings.UserNameLabel}"
+                Text="{Binding UserName}"
+                TextColor="Blue" />
+        </Border>
+        <Border
+            Stroke="Olive"
+            StrokeShape="RoundRectangle 8"
+            StrokeThickness="1">
+            <Grid
+                Padding="10"
+                ColumnDefinitions="*,Auto"
+                VerticalOptions="Center">
+                <Entry
+                    BackgroundColor="Transparent"
+                    FontSize="18"
+                    ReturnType="Done"
+                    ClearButtonVisibility="WhileEditing"
+                    IsPassword="{Binding IsPassword}"
+                    Placeholder="{x:Static m:Strings.PasswordLabel}"
+                    Text="{Binding Password}"
+                    TextColor="Blue"
+                    VerticalOptions="Center" />
+                <Button
+                    Padding="0"
+                    BorderWidth="0"
+                    BackgroundColor="Transparent"
+                    Command="{Binding ToggleIsPasswordCommand}"
+                    FontFamily="MaterialSymbols"
+                    FontSize="24"
+                    HorizontalOptions="End"
+                    Style="{StaticResource IconButtonStyle}"
+                    Text="{Binding IsPassword, Converter={StaticResource passwordIconConvert}}"
+                    TextColor="Olive"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Border>
+        <Button
+            Command="{Binding LoginCommand}"
+            CornerRadius="8"
+            FontSize="18"
+            HeightRequest="50"
+            Text="{x:Static m:Strings.LoginButton}"
+            TextColor="White" />
+    </VerticalStackLayout>
+</ContentPage>
