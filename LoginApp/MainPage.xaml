@@ -68,11 +68,18 @@
             </Grid>
         </Border>
         <Button
+            
             Command="{Binding LoginCommand}"
             CornerRadius="8"
             FontSize="18"
             HeightRequest="50"
             Text="{x:Static m:Strings.LoginButton}"
-            TextColor="White" />
+            TextColor="White" >
+            <Button.ImageSource>
+                <FontImageSource Glyph="{StaticResource IconLogin}">
+                    <FontImageSource.FontFamily>MaterialSymbols</FontImageSource.FontFamily>
+                </FontImageSource>
+            </Button.ImageSource>
+        </Button>
     </VerticalStackLayout>
 </ContentPage>
