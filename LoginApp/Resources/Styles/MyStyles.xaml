@@ -3,7 +3,7 @@
     <Style x:Key="baseButton" TargetType="Button">
         <Setter Property="BorderWidth" Value="3" />
         <Setter Property="BorderColor" Value="Green" />
-        <Setter Property="WidthRequest" Value="100" />
+        <Setter Property="WidthRequest" Value="50" />
         <Setter Property="FontSize" Value="12" />
     </Style>
     <Style

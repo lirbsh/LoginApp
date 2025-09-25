@@ -54,21 +54,19 @@
                     TextColor="Blue"
                     VerticalOptions="Center" />
                 <Button
-                    Padding="0"
                     BackgroundColor="Transparent"
                     BorderWidth="0"
                     Command="{Binding ToggleIsPasswordCommand}"
                     FontFamily="MaterialSymbols"
                     FontSize="24"
-                    HorizontalOptions="End"
                     Style="{StaticResource IconButtonStyle}"
+                    HorizontalOptions="End"
                     Text="{Binding IsPassword, Converter={StaticResource passwordIconConvert}}"
                     TextColor="Olive"
                     VerticalOptions="Center" />
             </Grid>
         </Border>
         <Button
-            
             Command="{Binding LoginCommand}"
             CornerRadius="8"
             FontSize="18"
